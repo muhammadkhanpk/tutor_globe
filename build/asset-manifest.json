@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0457ab13.chunk.css",
+    "main.js": "/static/js/main.cdfd9d24.chunk.js",
+    "main.js.map": "/static/js/main.cdfd9d24.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.342c9284.js",
+    "runtime-main.js.map": "/static/js/runtime-main.342c9284.js.map",
+    "static/css/2.ab75b8d7.chunk.css": "/static/css/2.ab75b8d7.chunk.css",
+    "static/js/2.59f1e541.chunk.js": "/static/js/2.59f1e541.chunk.js",
+    "static/js/2.59f1e541.chunk.js.map": "/static/js/2.59f1e541.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.ab75b8d7.chunk.css.map": "/static/css/2.ab75b8d7.chunk.css.map",
+    "static/css/main.0457ab13.chunk.css.map": "/static/css/main.0457ab13.chunk.css.map",
+    "static/js/2.59f1e541.chunk.js.LICENSE.txt": "/static/js/2.59f1e541.chunk.js.LICENSE.txt",
+    "static/media/Icon-1.23c366a3.svg": "/static/media/Icon-1.23c366a3.svg",
+    "static/media/Signin-shape11.a9c2f2a3.svg": "/static/media/Signin-shape11.a9c2f2a3.svg",
+    "static/media/Signin-shape22.c331f9e2.svg": "/static/media/Signin-shape22.c331f9e2.svg",
+    "static/media/Signin-shape3.6654cef8.svg": "/static/media/Signin-shape3.6654cef8.svg",
+    "static/media/Signin-shape4.ac4defe0.svg": "/static/media/Signin-shape4.ac4defe0.svg",
+    "static/media/add.1a62340f.svg": "/static/media/add.1a62340f.svg",
+    "static/media/icon-1.72683e8c.svg": "/static/media/icon-1.72683e8c.svg",
+    "static/media/icon-2.37cb125b.svg": "/static/media/icon-2.37cb125b.svg",
+    "static/media/icon-3.75a1e4ef.svg": "/static/media/icon-3.75a1e4ef.svg",
+    "static/media/icon-4.6c8e5ba4.svg": "/static/media/icon-4.6c8e5ba4.svg",
+    "static/media/icon-5.98a690c2.svg": "/static/media/icon-5.98a690c2.svg",
+    "static/media/icon1.1197ee9f.svg": "/static/media/icon1.1197ee9f.svg",
+    "static/media/icon2.1b2975d3.svg": "/static/media/icon2.1b2975d3.svg",
+    "static/media/icon3.bbb873b8.svg": "/static/media/icon3.bbb873b8.svg",
+    "static/media/icon4.4d44b1a6.svg": "/static/media/icon4.4d44b1a6.svg",
+    "static/media/logo.2dfd8ac6.jpeg": "/static/media/logo.2dfd8ac6.jpeg",
+    "static/media/teacher .3b435aab.png": "/static/media/teacher .3b435aab.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.342c9284.js",
+    "static/css/2.ab75b8d7.chunk.css",
+    "static/js/2.59f1e541.chunk.js",
+    "static/css/main.0457ab13.chunk.css",
+    "static/js/main.cdfd9d24.chunk.js"
+  ]
+}
