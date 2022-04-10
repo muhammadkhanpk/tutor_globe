@@ -42,14 +42,14 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
 
   return (
     <>
-      <div className='table__container'>
-        <ul className='responsive-table'>
-          <li className='table-header'>
-            <div className='col col-4'>Name</div>
-            <div className='col col-2'>Email</div>
-            <div className='col col-3'>Wishlist</div>
-            <div className='col col-2'>City</div>
-            <div className='col col-1'>Action</div>
+      <div className="table__container">
+        <ul className="responsive-table">
+          <li className="table-header">
+            <div className="col col-4">Name</div>
+            <div className="col col-2">Email</div>
+            <div className="col col-3">Wishlist</div>
+            <div className="col col-2">City</div>
+            <div className="col col-1">Action</div>
           </li>
 
           {data &&
@@ -58,12 +58,12 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
                 if (searchName == "") {
                   return val;
                 } else if (
-                  val.user.Name.toLowerCase().includes(
-                    searchName.toLowerCase()
-                  ) ||
-                  val.user.Email.toLowerCase().includes(
-                    searchName.toLowerCase()
-                  )
+                  val.user.name
+                    .toLowerCase()
+                    .includes(searchName.toLowerCase()) ||
+                  val.user.email
+                    .toLowerCase()
+                    .includes(searchName.tpageVisitedoLowerCase())
                 ) {
                   return val;
                 }
@@ -75,32 +75,32 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
               )
               .map((value, index) => {
                 return (
-                  <li className='table-row' key={index}>
-                    <div className='col col-4 flex' data-label='Parent Name'>
+                  <li className="table-row" key={index}>
+                    <div className="col col-4 flex" data-label="Parent Name">
                       {!value.user.Profile_Image ? (
                         <img
-                          src='https://bootdey.com/img/Content/avatar/avatar7.png'
-                          alt='Parent'
-                          className='rounded-circle'
+                          src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                          alt="Parent"
+                          className="rounded-circle"
                           width={50}
                         />
                       ) : (
                         <img
                           src={value.user.Profile_Image}
-                          alt='profile'
-                          className='rounded-circle'
+                          alt="profile"
+                          className="rounded-circle"
                         />
                       )}
 
-                      <p>{value.user.Name ? value.user.Name : "No Name"}</p>
+                      <p>{value.user.name ? value.user.name : "No Name"}</p>
                     </div>
                     {/* <div className="col col-2" data-label="Nom de famille">
                     {value.last_name ? value.last_name : "Non Nom de famille"}
                   </div> */}
-                    <div className='col col-2' data-label='Email'>
-                      {value.user.Email ? value.user.Email : "No  Email"}
+                    <div className="col col-2" data-label="Email">
+                      {value.user.email ? value.user.email : "No  Email"}
                     </div>
-                    <div className='col col-2' data-label='Wishlist'>
+                    <div className="col col-2" data-label="Wishlist">
                       <RiHeartsFill
                         onClick={openModal}
                         style={{
@@ -125,12 +125,12 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
                       )}
                     </div>
 
-                    <div className='col col-2' data-label='Téléphone'>
+                    <div className="col col-2" data-label="Téléphone">
                       {value.user.City ? value.user.City : "No Phone Number"}
                     </div>
-                    <div className='col col-1' data-label='Action'>
+                    <div className="col col-1" data-label="Action">
                       <div
-                        className='menu__dots'
+                        className="menu__dots"
                         onClick={() => handleMenu(index)}
                       >
                         <div></div>
@@ -138,15 +138,20 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
                         <div></div>
                       </div>
                       {menu === index && (
-                        <div className='menu'>
+                        <div className="menu">
                           <p>
                             <Link to={`users/${value.user.uid}`}>
                               View Profile
                             </Link>
                           </p>
-                          <div className='horizontal__line'></div>
+                          <p>
+                            <Link to={`users/liberaries/${value.user.uid}`}>
+                              View Liberaries
+                            </Link>
+                          </p>
+                          <div className="horizontal__line"></div>
                           <button
-                            className='btn danger'
+                            className="btn danger"
                             onClick={() => {
                               DeleteUser(value.user.uid);
                             }}

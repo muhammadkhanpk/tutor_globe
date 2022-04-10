@@ -24,21 +24,21 @@ const Topbar = ({ heading }) => {
     });
   };
   return (
-    <div className='topbar'>
+    <div className="topbar">
       {heading === "Previous page" ? (
         <h1 onClick={() => history.goBack()}>&#60; {`${heading}`}</h1>
       ) : (
-        <h1 className='heading'>{heading}</h1>
+        <h1 className="heading">{heading}</h1>
       )}
 
-      <div className='profile'>
-        <img src={Profile} alt='profile' />
+      <div className="profile">
+        <img src={Profile} alt="profile" />
         <p>Yasir Munir</p>
         <span onClick={() => setMenu(!menu)}>
           <BsChevronDown style={{ cursor: "pointer" }} />
         </span>
         {menu && (
-          <div className='menu'>
+          <div className="menu">
             <p onClick={handleLogout}>Sign out</p>
           </div>
         )}

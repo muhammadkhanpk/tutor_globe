@@ -18,44 +18,49 @@ import TutotrsDetails from "../Screens/Tutors/Details/TutorsDetails";
 import AssignProject from "../Screens/Tutors/Details/AssignProject/AssignProject";
 import PendingProfiles from "../Screens/PendingProfiles/PendingProfiles";
 import PendingProfilesDetails from "../Screens/PendingProfiles/Details/Details";
-
+import Liberaries from "../Screens/Users/Liberaries/Liberaries";
 const Routes = ({ isAuthenticated }) => {
   return (
     <Router>
       <Switch>
-        <PublicRoute path='/' component={Signin} exact={true} />
-        <PublicRoute path='/signin' component={Signin} exact={true} />
-        <PrivateRoute path='/dashboard' component={Dashboard} exact={true} />
-        <PrivateRoute path='/parents' component={Parents} exact={true} />
-        <PrivateRoute path='/users' component={Users} exact={true} />
+        <PublicRoute path="/" component={Signin} exact={true} />
+        <PublicRoute path="/signin" component={Signin} exact={true} />
+        <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
+        <PrivateRoute path="/parents" component={Parents} exact={true} />
+        <PrivateRoute path="/users" component={Users} exact={true} />
         <PrivateRoute
-          path='/parents/:userId'
+          path="/parents/:userId"
           component={ParentsDetails}
           exact={true}
         />
         <PrivateRoute
-          path='/users/:userId'
+          path="/users/:userId"
           component={UsersDetails}
           exact={true}
         />
-        <PrivateRoute path='/tutors' component={Tutors} exact={true} />
         <PrivateRoute
-          path='/tutors/:userId'
+          path="/users/liberaries/:userId"
+          component={Liberaries}
+          exact={true}
+        />
+        <PrivateRoute path="/tutors" component={Tutors} exact={true} />
+        <PrivateRoute
+          path="/tutors/:userId"
           component={TutotrsDetails}
           exact={true}
         />
         <PrivateRoute
-          path='/assignProject'
+          path="/assignProject"
           component={AssignProject}
           exact={true}
         />
         <PrivateRoute
-          path='/pending_profiles'
+          path="/pending_profiles"
           component={PendingProfiles}
           exact={true}
         />
         <PrivateRoute
-          path='/pending_profiles/:userId'
+          path="/pending_profiles/:userId"
           component={PendingProfilesDetails}
           exact={true}
         />

@@ -3,6 +3,7 @@ import { db } from "../firebase";
 import { onSnapshot, query, collection, doc, getDoc } from "firebase/firestore";
 import { ref, child, get } from "firebase/database";
 import { database } from "../firebase";
+import { object } from "yup";
 
 const useWishlist = (id) => {
   const [constructor, setConstructor] = useState({});
@@ -16,6 +17,7 @@ const useWishlist = (id) => {
         .then((snapshot) => {
           if (snapshot.exists()) {
             console.log(snapshot.val());
+            console.log("data", Object.values(snapshot.val()));
             setUsers(Object.values(snapshot.val()));
           } else {
             console.log("No data available");
