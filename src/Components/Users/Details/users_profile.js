@@ -115,7 +115,12 @@ export default function Profile() {
                       Edit
                     </a> */}
                     <span>
-                      <button className="btn btn-success d-flex justify-content-center">
+                      <button
+                        className="btn btn-success d-flex justify-content-center"
+                        onClick={() =>
+                          history.push("/users/liberaries/" + user.uid)
+                        }
+                      >
                         View Scrap Book Liberaries
                       </button>
                     </span>
