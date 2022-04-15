@@ -1,0 +1,25 @@
+.country_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.country_card {
+  width: 300px;
+  height: 80px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(71, 147, 71);
+  color: white;
+  transition: 0.3s;
+  margin: 10px;
+}
+.country_card:hover {
+  transform: scale(1.1);
+}
+.country_card span {
+  font-weight: 200;
+}

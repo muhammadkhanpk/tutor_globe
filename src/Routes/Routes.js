@@ -19,6 +19,8 @@ import AssignProject from "../Screens/Tutors/Details/AssignProject/AssignProject
 import PendingProfiles from "../Screens/PendingProfiles/PendingProfiles";
 import PendingProfilesDetails from "../Screens/PendingProfiles/Details/Details";
 import Liberaries from "../Screens/Users/Liberaries/Liberaries";
+import CountryCheckList from "../Screens/Users/CountryCheckLIst/CountryCheckList";
+import Questionare from "../Screens/Questionare/Questionare";
 const Routes = ({ isAuthenticated }) => {
   return (
     <Router>
@@ -41,6 +43,16 @@ const Routes = ({ isAuthenticated }) => {
         <PrivateRoute
           path="/users/liberaries/:userId"
           component={Liberaries}
+          exact={true}
+        />
+        <PrivateRoute
+          path="/users/country_checklist/:userId"
+          component={CountryCheckList}
+          exact={true}
+        />
+        <PrivateRoute
+          path="/questionare/:userId"
+          component={Questionare}
           exact={true}
         />
         <PrivateRoute path="/tutors" component={Tutors} exact={true} />

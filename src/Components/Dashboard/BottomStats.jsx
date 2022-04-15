@@ -9,7 +9,7 @@ import Icon4 from "../../Assets/SVG/Dashboard/icon-4.svg";
 import Icon5 from "../../Assets/SVG/Dashboard/icon-5.svg";
 import icon__5 from "../../Assets/SVG/Dashboard/teacher .png";
 
-import { FaChalkboardTeacher } from "react-icons/fa"
+import { FaChalkboardTeacher } from "react-icons/fa";
 // firebase
 import useCount from "../../hooks/useCount";
 import useParents from "../../hooks/useParents";
@@ -31,22 +31,21 @@ const BottomStats = () => {
           </div>
           <div className="data">
             <h2>
-Number of Total Parents
-            {/* Nombre total de clients */}
-
+              Number of Total Parents
+              {/* Nombre total de clients */}
             </h2>
             <h1>{parents ? parents.length : 0} Parents</h1>
           </div>
         </div>
         <div className="inner__box">
           <div className="icon icon__5">
-          {/* <i className="cil-chalkboard-teacher"></i> */}
-            <img  src={icon__5} alt="icon5" />
+            {/* <i className="cil-chalkboard-teacher"></i> */}
+            <img src={icon__5} alt="icon5" />
           </div>
           <div className="data">
             <h2>
-            Number of total Tutors
-            {/* Nombre total de constructeurs */}
+              Number of total Tutors
+              {/* Nombre total de constructeurs */}
             </h2>
             <h1>{tutors ? tutors.length : 0} Tutors</h1>
           </div>

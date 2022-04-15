@@ -116,12 +116,22 @@ export default function Profile() {
                     </a> */}
                     <span>
                       <button
-                        className="btn btn-success d-flex justify-content-center"
+                        className="btn"
                         onClick={() =>
                           history.push("/users/liberaries/" + user.uid)
                         }
                       >
                         View Scrap Book Liberaries
+                      </button>
+                    </span>
+                    <span>
+                      <button
+                        className="btn"
+                        onClick={() =>
+                          history.push("/users/country_checklist/" + user.uid)
+                        }
+                      >
+                        Country Checklist
                       </button>
                     </span>
                   </div>
