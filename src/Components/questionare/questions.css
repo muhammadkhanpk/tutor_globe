@@ -1,5 +1,5 @@
 .question_box {
-  background-color: rgb(32, 89, 43);
+  background-color: #e9582b;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -11,13 +11,30 @@
   color: white;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+.qAns {
+  position: absolute;
+  top: 50px;
+  transition: all 3s ease-in;
+  line-height: 0;
+  color: black;
 }
 .country {
   display: flex;
   justify-content: center;
   margin: 5px;
   padding: 5px;
-  background-color: green;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 20px;
+}
+.qA {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+.qA button {
+  margin-left: 100px;
 }

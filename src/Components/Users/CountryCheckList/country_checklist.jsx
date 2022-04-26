@@ -7,7 +7,7 @@ function CountryCheckList() {
   const { userId } = useParams();
   const history = useHistory();
   const countryChecklist = useUserCountryChecklist(userId);
-  console.log("abc", countryChecklist);
+  //console.log("country checklists by khan", countryChecklist);
   const [search, setSearch] = useState("");
   return (
     <div>
@@ -27,7 +27,7 @@ function CountryCheckList() {
       </div>
       <div className="country_row">
         {countryChecklist
-          .filter((name) => name.toLowerCase().includes(search))
+          .filter((country) => country.Country.toLowerCase().includes(search))
           .map((country, index) => {
             return (
               <div
@@ -36,12 +36,13 @@ function CountryCheckList() {
                 onClick={() =>
                   history.push({
                     pathname: "/questionare/" + userId,
-                    state: country,
+                    state: { country },
                   })
                 }
               >
                 <h3>
-                  {country} <span>10%</span>
+                  {country.Country}
+                  <span> {Math.round(country.percentage)}%</span>
                 </h3>
               </div>
             );

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import "./topbar.style.css";
-
 // svg and images
 import { BsChevronDown } from "react-icons/bs";
 import Profile from "../../Assets/Images/Profile.png";
@@ -12,11 +11,15 @@ import { auth } from "../../firebase";
 // redux
 import { useDispatch } from "react-redux";
 import { userSuccess } from "../../Redux/Actions/userActions";
+import useUser from "../../hooks/userUser";
 
 const Topbar = ({ heading }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [menu, setMenu] = useState(false);
+  const authUser = auth.currentUser;
+  const { user } = useUser(authUser.uid);
+
   const handleLogout = () => {
     auth.signOut().then(() => {
       dispatch(userSuccess({}));
@@ -32,8 +35,12 @@ const Topbar = ({ heading }) => {
       )}
 
       <div className="profile">
-        <img src={Profile} alt="profile" />
-        <p>Yasir Munir</p>
+        {user.ScrapPicture ? (
+          <img src={user.ScrapPicture} alt="profile" />
+        ) : (
+          <img src={Profile} alt="profile" />
+        )}
+        <p>{user.Name}</p>
         <span onClick={() => setMenu(!menu)}>
           <BsChevronDown style={{ cursor: "pointer" }} />
         </span>

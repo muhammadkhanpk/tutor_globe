@@ -23,7 +23,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { db, auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
-
 const Form = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -43,7 +42,6 @@ const Form = () => {
 
   const onSubmit = async () => {
     if (formik.values.email && formik.values.password) {
-
       // signInWithEmailAndPassword(auth, formik.values.email, formik.values.password)
       // .then((userCredential) => {
       //   const user = userCredential.user;
@@ -97,13 +95,13 @@ const Form = () => {
       <div className="error">{error && error}</div>
       <div className="email__field">
         <label htmlFor="email">
-UserEmail
-        {/* Nom d'utilisateu */}
+          UserEmail
+          {/* Nom d'utilisateu */}
         </label>
         <br />
         <input
           type="email"
-          placeholder="HugIn113@gmail.com"
+          placeholder="globetrotters@gmail.com"
           id="email"
           name="email"
           {...formik.getFieldProps("email")}

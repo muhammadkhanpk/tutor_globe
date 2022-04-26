@@ -12,10 +12,10 @@ const useUser = (id) => {
   useEffect(() => {
     setUser({});
     const getUser = async () => {
-      await get(child(ref(database), "Users/" + id + "/user"))
+      await get(child(ref(database), "Users/" + id + "/Profile"))
         .then((snapshot) => {
           if (snapshot.exists()) {
-            console.log(snapshot.val());
+            //console.log(snapshot.val());
             setUser(snapshot.val());
           } else {
             console.log("No data available");

@@ -16,9 +16,9 @@ export default function Profile() {
   const history = useHistory();
   async function DeleteUser(id) {
     if (window.confirm("Are u sure to delete")) {
-      await remove(child(ref(database), "Users/" + userId + "/user"))
+      await remove(child(ref(database), "Users/" + userId))
         .then(() => {
-          history.goBack();
+          history.goBack(); 
           alert("Delete user Successfully!");
         })
         .catch((error) => {
@@ -47,7 +47,7 @@ export default function Profile() {
               <div className="card-body pic_card_body">
                 <div className="d-flex flex-column align-items-center text-center img_div">
                   <div className="rofile_pic_div">
-                    {!user.Profile_Image ? (
+                    {!user.ScrapPicture ? (
                       <img
                         src="https://bootdey.com/img/Content/avatar/avatar7.png"
                         alt="user"
@@ -59,7 +59,7 @@ export default function Profile() {
                       <img
                         width={150}
                         height={150}
-                        src={user.Profile_Image}
+                        src={user.ScrapPicture}
                         alt="https://bootdey.com/img/Content/avatar/avatar7.png"
                       />
                     )}

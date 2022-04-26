@@ -5,7 +5,7 @@ body {
   font-family: "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:rgb(248, 248, 248);
+  background-color: rgb(248, 248, 248);
 }
 
 code {
@@ -30,10 +30,10 @@ code {
   --txt-White: #ffffff;
   --grey: #b6c5d1;
 } */
-:root{
-  --primary-color: #21AD6A;
+:root {
+  --primary-color: #58166e;
   --primary-color2: #1f1d2b;
-  --secondary: #ADA821;
+  --secondary: #ada821;
   --gold: #ada11f;
   --txtWhite: #ffffff;
   --txtBlue: blue;
@@ -42,7 +42,7 @@ code {
   --white: white;
   --black: black;
   --txtBlack: black;
-  --iconCol: #D1D1D1;
+  --iconCol: #d1d1d1;
   --iconSize: 26;
   --iconSizeLarge: 35;
   --iconSizeSm: 18;
@@ -56,7 +56,6 @@ code {
   --txt-Black2: #585858;
   --txt-White: #ffffff;
   --grey: #b6c5d1;
-
 }
 
 button,
@@ -72,7 +71,6 @@ input {
   padding-left: 120px;
   padding-right: 50px;
   padding-bottom: 50px;
-
 }
 
 .flex {
@@ -92,4 +90,10 @@ a {
 
 li {
   list-style: none;
+}
+
+.khan {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

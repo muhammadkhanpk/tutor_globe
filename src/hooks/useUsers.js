@@ -16,8 +16,8 @@ const useWishlist = (id) => {
       await get(child(ref(database), "Users"))
         .then((snapshot) => {
           if (snapshot.exists()) {
-            console.log(snapshot.val());
-            console.log("data", Object.values(snapshot.val()));
+            //console.log(snapshot.val());
+            //console.log("data", Object.values(snapshot.val()));
             setUsers(Object.values(snapshot.val()));
           } else {
             console.log("No data available");

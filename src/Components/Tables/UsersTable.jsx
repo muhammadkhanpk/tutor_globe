@@ -28,7 +28,7 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
   const history = useHistory();
   async function DeleteUser(id) {
     if (window.confirm("Are u sure to delete")) {
-      await remove(child(ref(database), "Users/" + id + "/user"))
+      await remove(child(ref(database), "Users/" + id))
         .then(() => {
           let path = window.location.pathname;
           alert("Delete Successfully!");
@@ -47,7 +47,7 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
           <li className="table-header">
             <div className="col col-4">Name</div>
             <div className="col col-2">Email</div>
-            <div className="col col-3">Wishlist</div>
+
             <div className="col col-2">City</div>
             <div className="col col-1">Action</div>
           </li>
@@ -58,12 +58,12 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
                 if (searchName == "") {
                   return val;
                 } else if (
-                  val.user.name
-                    .toLowerCase()
-                    .includes(searchName.toLowerCase()) ||
-                  val.user.email
-                    .toLowerCase()
-                    .includes(searchName.tpageVisitedoLowerCase())
+                  val.Profile.Name.toLowerCase().includes(
+                    searchName.toLowerCase()
+                  ) ||
+                  val.Profile.Email.toLowerCase().includes(
+                    searchName.toLowerCase()
+                  )
                 ) {
                   return val;
                 }
@@ -74,10 +74,11 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
                   : [pageVisited, pageVisited + itemsPerPage])
               )
               .map((value, index) => {
+                //console.log("value data", value);
                 return (
                   <li className="table-row" key={index}>
                     <div className="col col-4 flex" data-label="Parent Name">
-                      {!value.user.Profile_Image ? (
+                      {!value.Profile.ScrapPicture ? (
                         <img
                           src="https://bootdey.com/img/Content/avatar/avatar7.png"
                           alt="Parent"
@@ -86,47 +87,24 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
                         />
                       ) : (
                         <img
-                          src={value.user.Profile_Image}
+                          src={value.Profile.ScrapPicture}
                           alt="profile"
                           className="rounded-circle"
                         />
                       )}
 
-                      <p>{value.user.name ? value.user.name : "No Name"}</p>
+                      <p>
+                        {value.Profile.Name ? value.Profile.Name : "No Name"}
+                      </p>
                     </div>
                     {/* <div className="col col-2" data-label="Nom de famille">
                     {value.last_name ? value.last_name : "Non Nom de famille"}
                   </div> */}
                     <div className="col col-2" data-label="Email">
-                      {value.user.email ? value.user.email : "No  Email"}
+                      {value.Profile.Email ? value.Profile.Email : "No  Email"}
                     </div>
-                    <div className="col col-2" data-label="Wishlist">
-                      <RiHeartsFill
-                        onClick={openModal}
-                        style={{
-                          cursor: "pointer",
-                          color: "green",
-                          width: "30px",
-                          height: "25px",
-                        }}
-                      />
-                      <p
-                        style={{ cursor: "pointer", color: "blue" }}
-                        onClick={openModal}
-                      >
-                        view
-                      </p>
-
-                      {modal && (
-                        <ConstructorModal
-                          data={value.user.wishList}
-                          setModal={setModal}
-                        />
-                      )}
-                    </div>
-
                     <div className="col col-2" data-label="Téléphone">
-                      {value.user.City ? value.user.City : "No Phone Number"}
+                      {value.Profile.City ? value.Profile.City : "No City"}
                     </div>
                     <div className="col col-1" data-label="Action">
                       <div
@@ -140,20 +118,20 @@ const ClientTable = ({ data, itemsPerPage, currentPage, searchName }) => {
                       {menu === index && (
                         <div className="menu">
                           <p>
-                            <Link to={`users/${value.user.uid}`}>
+                            <Link to={`users/${value.Profile.uid}`}>
                               View Profile
                             </Link>
                           </p>
                           <p>
-                            <Link to={`users/liberaries/${value.user.uid}`}>
-                              View Liberaries
+                            <Link to={`users/liberaries/${value.Profile.uid}`}>
+                              View Libraries
                             </Link>
                           </p>
                           <div className="horizontal__line"></div>
                           <button
                             className="btn danger"
                             onClick={() => {
-                              DeleteUser(value.user.uid);
+                              DeleteUser(value.Profile.uid);
                             }}
                           >
                             Delete

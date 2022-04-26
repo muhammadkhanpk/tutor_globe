@@ -29,14 +29,17 @@ function Liberaries() {
         {userScrapbook &&
           userScrapbook
             .filter((book, index) => {
-              return Object.keys(book).some((key) =>
-                book[key].toLowerCase().includes(search)
+              return (
+                book.ScrapName.toLowerCase().includes(search) ||
+                book.ScrapCurrency.toLowerCase().includes(search) ||
+                book.ScrapCurrency.toLowerCase().includes(search) ||
+                book.ScrapTitle.toLowerCase().includes(search)
               );
             })
             .map((book, index) => {
               return (
-                <div className="col-sm-3">
-                  <div className="card" key={index}>
+                <div className="col-sm-3" key={index}>
+                  <div className="card">
                     <img
                       className="card-img-top"
                       src={book.ScrapPicture}

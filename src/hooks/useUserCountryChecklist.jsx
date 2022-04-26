@@ -6,7 +6,7 @@ function useUserCountryChecklist(id) {
   const [countryChecklist, setCountryChecklist] = useState([]);
   useEffect(() => {
     const getAllCountryChecklists = async () => {
-      await get(child(ref(database), "Users/" + id + "/user/scrapbook")).then(
+      await get(child(ref(database), "Users/" + id + "/user/countries")).then(
         (snapshot) => {
           if (snapshot.exists()) {
             snapshot.forEach((childSnap) => {
@@ -14,7 +14,7 @@ function useUserCountryChecklist(id) {
               const id = childSnap.key;
               const data = childSnap.val();
               //console.log("abc", data.ScrapCountry);
-              setCountryChecklist((pre) => [...pre, data.ScrapCountry]);
+              setCountryChecklist((pre) => [...pre, data]);
               //console.log(countryChecklist);
             });
           } else {
@@ -25,7 +25,7 @@ function useUserCountryChecklist(id) {
     };
     getAllCountryChecklists();
   }, [id]);
-  return [...new Set(countryChecklist)];
+  return countryChecklist;
 }
 
 export default useUserCountryChecklist;

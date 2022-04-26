@@ -9,7 +9,7 @@ function Questionare() {
       <Topbar heading="Previous page" />
       <Sidebar />
       <div className="container">
-        <Questions  />
+        <Questions />
       </div>
     </div>
   );

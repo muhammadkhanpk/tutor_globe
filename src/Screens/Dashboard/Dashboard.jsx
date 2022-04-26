@@ -13,9 +13,10 @@ const Dashboard = () => {
       <Topbar heading="Dashboard" />
       <Sidebar />
       <div className="container">
-        <CountBox />
-        <LineChart />
+        {/* <CountBox /> */}
+
         <BottomStats />
+        <LineChart />
       </div>
     </div>
   );
